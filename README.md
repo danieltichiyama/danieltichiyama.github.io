@@ -1,0 +1,1 @@
+# danieltichiyama.github.io
