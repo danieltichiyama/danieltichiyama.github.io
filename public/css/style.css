@@ -1,2 +1,86 @@
 html {
-  background-color: red; }
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  margin: 0;
+  background-color: #007a7a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; }
+  body .title_container {
+    height: 100%;
+    width: 100%;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 84px;
+    line-height: 38px; }
+    body .title_container h2 {
+      border-bottom: none; }
+      body .title_container h2 span {
+        border-bottom: 2px black dashed;
+        font-weight: 500; }
+  body #navigation_container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center; }
+    body #navigation_container #navigation_tab {
+      height: 36px;
+      width: 240px;
+      background-color: #de6600;
+      border-radius: 6px 6px 0 0;
+      z-index: 99;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body #navigation_container #navigation_tab #arrow_up {
+        height: 24px;
+        width: 24px;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+        border-left: 4px solid rgba(0, 0, 0, 0.25);
+        transform: rotate(135deg);
+        margin-top: 12px; }
+      body #navigation_container #navigation_tab #arrow_down {
+        height: 24px;
+        width: 24px;
+        border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+        border-left: 4px solid rgba(0, 0, 0, 0.25);
+        transform: rotate(-45deg);
+        margin-bottom: 12px; }
+    body #navigation_container #navigation {
+      background: #de6600;
+      justify-self: flex-end;
+      min-height: 72px;
+      height: fit-content;
+      flex-wrap: wrap;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 12px 0; }
+      body #navigation_container #navigation .navigation_button {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        height: 48px;
+        min-width: 120px;
+        margin: 0 12px;
+        padding: 0 36px;
+        border: none;
+        border-radius: 6px;
+        color: rgba(0, 0, 0, 0.5);
+        background-color: transparent; }
+        body #navigation_container #navigation .navigation_button:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+          color: rgba(0, 0, 0, 0.8); }
