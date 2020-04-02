@@ -1,26 +1,5 @@
 "strict mode";
 
-//font-test
-let fontTest = () => {
-  let sentence = "The quick brown fox jumped over the lazy dog.";
-  let fonts = {
-    Ubuntu: "Ubuntu, sans-serif",
-    Raleway: "Raleway, sans-serif",
-    Anton: "Anton, sans-serif",
-    Sofia: "Sofia, cursive",
-    Pacifico: "Pacifico, cursive"
-  };
-
-  let body = document.getElementsByTagName("body");
-
-  for (let key in fonts) {
-    let div = document.createElement("div");
-    div.setAttribute("class", "font-test");
-    div.style = `font-family:${fonts[key]}; font-size: 32px;`;
-    div.innerHTML = sentence + ` -- ${[key]}`;
-    body[0].appendChild(div);
-  }
-};
 //puts buttons into navigation bar
 let populateNav = () => {
   let nav = document.getElementById("navigation");
@@ -51,29 +30,14 @@ let populateNav = () => {
 
   for (let key in links) {
     let a = document.createElement("a");
-    let img = document.createElement("img");
-
     a.className = "navigation_button";
     a.id = `nav_button_${key}`;
-
-    // if (!links[key].target) {
-    //   a.target = "_blank";
-    // } else {
-    //   a.target = links[key].target;
-    // }
-    // a.setAttribute("name", key);
-
-    // img.src = links[key].svg;
-    // img.alt = key;
-    // img.class = "nav_icon";
-    // a.appendChild(img);
     a.innerHTML = links[key].svg;
 
     a.href = links[key].url;
     a.onfocus = () => {
       a.innerHTML = key;
     };
-
     a.onblur = () => {
       a.innerHTML = links[key].svg;
     };
@@ -81,7 +45,6 @@ let populateNav = () => {
     a.addEventListener("mouseover", () => {
       a.innerHTML = key;
     });
-
     a.addEventListener("mouseout", () => {
       a.innerHTML = links[key].svg;
     });
@@ -89,6 +52,7 @@ let populateNav = () => {
     nav.appendChild(a);
   }
 };
+
 //changes the adjective at the end of the sentence every 3 seconds
 let changeAdj = () => {
   let adjectives = ["simple", "neat", "clean", "nice", "interesting"];
