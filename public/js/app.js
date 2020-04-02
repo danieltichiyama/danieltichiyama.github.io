@@ -20,7 +20,7 @@ let fontTest = () => {
     body[0].appendChild(div);
   }
 };
-
+//puts buttons into navigation bar
 let populateNav = () => {
   let nav = document.getElementById("navigation");
 
@@ -43,7 +43,54 @@ let populateNav = () => {
     nav.appendChild(button);
   }
 };
+//changes the adjective at the end of the sentence every 3 seconds
+let changeAdj = () => {
+  let adjectives = ["simple", "neat", "clean", "nice", "interesting"];
+  let count = 0;
+  let span = document.getElementById("adjectives");
 
-console.log(window);
+  return setInterval(() => {
+    if (count >= adjectives.length) {
+      count = 0;
+    }
+    span.innerHTML = adjectives[count];
+    count++;
+  }, 3000);
+};
+
+//global var for toggleNav function
+let showNav = false;
+//toggles the arrow up and down
+let toggleArrow = () => {
+  let tab = document.getElementById("navigation_tab");
+  let arrow = document.createElement("div");
+
+  if (showNav) {
+    arrow.id = "arrow_down";
+  } else {
+    arrow.id = "arrow_up";
+  }
+  if (tab.hasChildNodes()) {
+    let otherArrow = tab.childNodes[0];
+    tab.replaceChild(arrow, otherArrow);
+  } else {
+    tab.appendChild(arrow);
+  }
+};
+
+//toggles the navigation bar display from none to hidden;
+let navDisplay = () => {
+  let nav = document.getElementById("navigation");
+
+  if (!showNav) {
+    nav.style = "display: none";
+    toggleArrow();
+  } else {
+    nav.style = "display: flex;";
+    toggleArrow();
+  }
+};
 
 populateNav();
+changeAdj();
+navDisplay();

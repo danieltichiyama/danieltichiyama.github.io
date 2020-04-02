@@ -38,13 +38,28 @@ body {
     padding: 84px;
     line-height: 38px;
 
-    h2 {
-      border-bottom: none;
+    .words_container {
+      width: auto;
 
-      span {
-        border-bottom: 2px black dashed;
-        font-weight: 500;
-        color: rgba($color: $off-white, $alpha: 1);
+      h2 {
+        border-bottom: none;
+        position: relative;
+        margin-left: -5%;
+
+        #adjectives {
+          border-bottom: 2px black dashed;
+          font-weight: 500;
+          color: rgba($color: $off-white, $alpha: 1);
+          position: absolute;
+          padding-left: 4px;
+          width: 134px;
+          text-align: center;
+        }
+
+        #period {
+          position: absolute;
+          right: -100px;
+        }
       }
     }
   }
@@ -56,6 +71,8 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    position: fixed;
+    bottom: 0;
 
     #navigation_tab {
       height: 36px;
