@@ -27,7 +27,8 @@ body {
       border-bottom: none; }
       body .title_container h2 span {
         border-bottom: 2px black dashed;
-        font-weight: 500; }
+        font-weight: 500;
+        color: #ebd9c8; }
   body #navigation_container {
     height: auto;
     width: 100%;
