@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/danieltichiyama/danieltichiyama.github.io/issues"
   },
-  "homepage": "https://github.com/danieltichiyama/danieltichiyama.github.io#readme"
+  "homepage": "https://github.com/danieltichiyama/danieltichiyama.github.io#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  }
 }
