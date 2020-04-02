@@ -1,4 +1,10 @@
 "strict mode";
+// import github from "../assets/github.svg";
+// import linkedin from "../assets/linkedin.svg";
+// import mail from "../assets/mail.svg";
+// import resume from "../assets/resume.svg";
+// import smartphone from "../assets/smartphone.svg";
+
 //font-test
 let fontTest = () => {
   let sentence = "The quick brown fox jumped over the lazy dog.";
@@ -24,23 +30,39 @@ let fontTest = () => {
 let populateNav = () => {
   let nav = document.getElementById("navigation");
 
-  let buttons = {
-    gitHub: { url: "github.com/danieltichiyama", icon: "" },
-    linkedIn: { url: "linkedin.com/in/danieltichiyama", icon: "" },
-    resume: { url: "", icon: "" },
-    email: { url: "emailto: daniel.ichiyama@gmail.com", icon: "" },
-    phone: { url: "tel:+18087730442" }
+  let links = {
+    GitHub: {
+      url: "https://www.github.com/danieltichiyama",
+      svg: "./assets/github.svg"
+    },
+    LinkedIn: {
+      url: "https://www.linkedin.com/in/danieltichiyama",
+      svg: "./assets/linkedin.svg"
+    },
+    Resume: { url: "", svg: "../assets/resume.svg" },
+    Email: {
+      url: "emailto: daniel.ichiyama@gmail.com",
+      svg: "./assets/mail.svg"
+    },
+    Call: { url: "tel:+18087730442", svg: "./assets/smartphone.svg" }
   };
 
-  for (let key in buttons) {
-    let button = document.createElement("button");
-    button.className = "navigation_button";
-    button.id = `nav_button_${key}`;
-    button.innerHTML = key;
-    button.addEventListener("click", () => {
-      window.history.push(buttons[key].url);
-    });
-    nav.appendChild(button);
+  for (let key in links) {
+    let a = document.createElement("a");
+    let img = document.createElement("img");
+
+    a.className = "navigation_button";
+    a.id = `nav_button_${key}`;
+    a.target = "_blank";
+    a.setAttribute("name", key);
+
+    img.src = links[key].svg;
+    img.alt = key;
+    img.class = "nav_icon";
+    a.appendChild(img);
+
+    a.href = links[key].url;
+    nav.appendChild(a);
   }
 };
 //changes the adjective at the end of the sentence every 3 seconds
@@ -90,6 +112,14 @@ let navDisplay = () => {
     toggleArrow();
   }
 };
+
+let toggleShowNav = () => {
+  showNav = !showNav;
+  return navDisplay();
+};
+
+let tab = document.getElementById("navigation_tab");
+tab.onclick = toggleShowNav;
 
 populateNav();
 changeAdj();
