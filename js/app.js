@@ -69,7 +69,7 @@ let changeAdj = () => {
 };
 
 //global var for toggleNav function
-let showNav = true;
+let showNav = false;
 //toggles the arrow up and down
 let toggleArrow = () => {
   let tab = document.getElementById("navigation_tab");
