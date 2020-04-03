@@ -72,22 +72,19 @@ body {
       justify-self: flex-end;
       min-height: 72px;
       height: fit-content;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding: 12px 0; }
-      body #navigation_container #navigation .navigation_button {
+      body #navigation_container #navigation .navigation_a {
         font-family: "Ubuntu", sans-serif;
         font-weight: 400;
         font-size: 18px;
         text-decoration: none;
-        height: 48px;
-        min-width: 69px;
+        border: 1px red dashed;
         width: auto;
-        margin: 0 12px;
-        border: none;
         border-radius: 6px;
         color: rgba(0, 0, 0, 0.5);
         background-color: transparent;
@@ -95,11 +92,14 @@ body {
         align-items: center;
         justify-content: center;
         position: relative; }
-        body #navigation_container #navigation .navigation_button:hover::after {
-          content: attr(in);
-          font-family: "Ubuntu", sans-serif;
-          font-weight: 400;
-          font-size: 18px;
-          position: absolute;
-          margin-left: 60px;
-          color: rgba(0, 0, 0, 0.6); }
+        @media screen and (min-width: 350px) {
+          body #navigation_container #navigation .navigation_a {
+            min-width: 69px; }
+            body #navigation_container #navigation .navigation_a:hover::after {
+              content: attr(in);
+              font-family: "Ubuntu", sans-serif;
+              font-weight: 400;
+              font-size: 18px;
+              position: absolute;
+              margin-left: 60px;
+              color: rgba(0, 0, 0, 0.6); } }

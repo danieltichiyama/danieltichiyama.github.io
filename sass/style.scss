@@ -99,23 +99,20 @@ body {
       justify-self: flex-end;
       min-height: 72px;
       height: fit-content;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
       padding: 12px 0;
 
-      .navigation_button {
+      .navigation_a {
         font-family: $Ubuntu;
         font-weight: 400;
         font-size: 18px;
         text-decoration: none;
-        height: 48px;
-        min-width: 69px;
+        border: 1px red dashed;
         width: auto;
-        margin: 0 12px;
-        border: none;
         border-radius: 6px;
         color: rgba($color: #000000, $alpha: 0.5);
         background-color: transparent;
@@ -124,15 +121,19 @@ body {
         justify-content: center;
         position: relative;
 
-        &:hover {
-          &::after {
-            content: attr(in);
-            font-family: $Ubuntu;
-            font-weight: 400;
-            font-size: 18px;
-            position: absolute;
-            margin-left: 60px;
-            color: rgba($color: #000000, $alpha: 0.6);
+        @media screen and (min-width: 350px) {
+          min-width: 69px;
+
+          &:hover {
+            &::after {
+              content: attr(in);
+              font-family: $Ubuntu;
+              font-weight: 400;
+              font-size: 18px;
+              position: absolute;
+              margin-left: 60px;
+              color: rgba($color: #000000, $alpha: 0.6);
+            }
           }
         }
       }

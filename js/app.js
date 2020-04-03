@@ -30,7 +30,7 @@ let populateNav = () => {
 
   for (let key in links) {
     let a = document.createElement("a");
-    a.className = "navigation_button";
+    a.className = "navigation_a";
     a.id = `nav_button_${key}`;
     a.innerHTML = links[key].svg;
 
@@ -69,7 +69,7 @@ let changeAdj = () => {
 };
 
 //global var for toggleNav function
-let showNav = false;
+let showNav = true;
 //toggles the arrow up and down
 let toggleArrow = () => {
   let tab = document.getElementById("navigation_tab");
